@@ -29,7 +29,7 @@ for config in configurations:
     best_position, best_fitness = model.solve(problem_dict)
 
     print("\n")
-    print("Konfiguracja: epoch =", epoch, ", pop_size =", pop_size)
+    print("Konfiguracja: epoch = ", epoch, ", pop_size = ", pop_size)
     print("Najlepsze rozwiązanie znalezione przez MFO:")
     print("Wartość funkcji celu:", best_fitness)
     print("Wartości zmiennych:", best_position)
