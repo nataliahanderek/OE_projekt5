@@ -16,9 +16,9 @@ problem_dict = {
 
 # różne konfiguracje do testowania
 configurations = [
-    {"epoch": 100, "pop_size": 50},
-    {"epoch": 200, "pop_size": 100},
-    {"epoch": 1000, "pop_size": 500}
+    {"epoch": 700, "pop_size": 350}
+    # {"epoch": 200, "pop_size": 100}
+    # {"epoch": 1000, "pop_size": 500}
 ]
 
 for config in configurations:
@@ -27,6 +27,12 @@ for config in configurations:
 
     model = OriginalMFO(epoch, pop_size)
     best_position, best_fitness = model.solve(problem_dict)
+
+    history = model.history
+    positions = history.list_current_best
+    worst = history.list_current_worst
+    # model.history.save_diversity_chart(filename="diversity")
+    model.history.save_global_best_fitness_chart(filename="best")
 
     print("\n")
     print("Konfiguracja: epoch = ", epoch, ", pop_size = ", pop_size)
